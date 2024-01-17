@@ -4,10 +4,12 @@ import 'package:wifi_iot/wifi_iot.dart';
 void main() => runApp(MaterialApp(
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: FlutterWifiConnect(),
+      home: const FlutterWifiConnect(),
     ));
 
 class FlutterWifiConnect extends StatefulWidget {
+  const FlutterWifiConnect({super.key});
+
   @override
   _FlutterWifiConnectState createState() => _FlutterWifiConnectState();
 }
@@ -51,35 +53,35 @@ class _FlutterWifiConnectState extends State<FlutterWifiConnect> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Wi-Fi Connect"),
+        title: const Text("Wi-Fi Connect"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextField(
               controller: ssidController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "SSID",
               ),
             ),
             TextField(
               controller: passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Password",
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _connectToWifi,
-              child: Text("Connect"),
+              child: const Text("Connect"),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               connectionStatus,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.green,
               ),
